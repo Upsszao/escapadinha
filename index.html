@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Nossa Escapadinha Perfeita</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, #F5D5E0 0%, #E8D5F5 50%, #D5E5F5 100%);
+            min-height: 100vh;
+            color: #4A4A4A;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #F5D5E0, #D4A5C0, #E8D5F5, #B8A5D4, #D5E5F5);
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #6B4C6E;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #8B6B8E;
+            letter-spacing: 0.5px;
+        }
+
+        .header-icon {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .header-icon .sparkle-icon {
+            transition: transform 0.4s ease;
+        }
+
+        .header-icon:hover .sparkle-icon:nth-child(1) {
+            transform: rotate(-20deg) scale(1.2);
+        }
+
+        .header-icon:hover .sparkle-icon:nth-child(3) {
+            transform: rotate(20deg) scale(1.2);
+        }
+
+        .header-icon .heart-icon .heart {
+            transition: transform 0.4s ease;
+            transform-origin: 50% 50%;
+        }
+
+        .header-icon:hover .heart-icon .heart {
+            transform: scale(1.25);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        /* Hotel Grid */
+        .hotel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        /* Hotel Card */
+        .hotel-card {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(107, 76, 110, 0.10);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(6px);
+        }
+
+        .hotel-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(107, 76, 110, 0.18);
+        }
+
+        /* Imagem placeholder */
+        .hotel-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hotel-image-placeholder {
+            width: 100%;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hotel-image-placeholder .hotel-svg-icon {
+            opacity: 0.5;
+            transition: transform 0.5s ease, opacity 0.3s ease;
+        }
+
+        .hotel-card:hover .hotel-image-placeholder .hotel-svg-icon {
+            transform: scale(1.08);
+            opacity: 0.65;
+        }
+
+        .hotel-card:hover .hotel-image-placeholder .hotel-svg-icon .building {
+            transform: translateY(-2px);
+        }
+
+        .img-gradient-1 { background: linear-gradient(135deg, #E8B4CB, #D4A5C0, #C99BB8); }
+        .img-gradient-2 { background: linear-gradient(135deg, #B8C5E8, #A5B4D4, #99AAC9); }
+        .img-gradient-3 { background: linear-gradient(135deg, #C5D4E8, #B4C5D4, #A5B8C9); }
+        .img-gradient-4 { background: linear-gradient(135deg, #D4C5E8, #C5B4D8, #B8A5CC); }
+        .img-gradient-5 { background: linear-gradient(135deg, #E8D4C5, #D8C5B4, #CCB8A5); }
+        .img-gradient-6 { background: linear-gradient(135deg, #C5E8D4, #B4D8C5, #A5CCB8); }
+
+        /* Card Body */
+        .card-body {
+            padding: 24px;
+        }
+
+        .hotel-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 14px;
+        }
+
+        .hotel-name a {
+            color: #6B4C6E;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .hotel-name a:hover {
+            color: #9B6B9E;
+            text-decoration: underline;
+        }
+
+        /* Info rows */
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: #5A5A5A;
+        }
+
+        .info-row .icon-svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            color: #9B6B9E;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .info-row:hover .icon-svg {
+            color: #6B4C6E;
+        }
+
+        /* Globe icon spin on hover */
+        .info-row:hover .icon-svg.icon-globe .globe-group {
+            animation: globeSpin 1.5s ease-in-out;
+        }
+
+        @keyframes globeSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Car icon bounce on hover */
+        .info-row:hover .icon-svg.icon-car {
+            animation: carBounce 0.5s ease;
+        }
+
+        @keyframes carBounce {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(3px); }
+            75% { transform: translateX(-2px); }
+        }
+
+        /* Calendar icon pulse on hover */
+        .info-row:hover .icon-svg.icon-calendar {
+            animation: calPulse 0.4s ease;
+        }
+
+        @keyframes calPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        /* Sparkle icon twinkle on hover */
+        .info-row:hover .icon-svg.icon-sparkle .sparkle-main {
+            animation: sparkleTwinkle 0.6s ease;
+        }
+
+        .info-row:hover .icon-svg.icon-sparkle .sparkle-top {
+            animation: sparkleTwinkle 0.6s ease 0.1s;
+        }
+
+        .info-row:hover .icon-svg.icon-sparkle .sparkle-bottom {
+            animation: sparkleTwinkle 0.6s ease 0.2s;
+        }
+
+        @keyframes sparkleTwinkle {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.3) rotate(15deg); }
+        }
+
+        /* Wallet icon flip on hover */
+        .info-row:hover .icon-svg.icon-wallet .flap {
+            animation: walletFlip 0.5s ease;
+        }
+
+        @keyframes walletFlip {
+            0%, 100% { transform: scaleX(1); }
+            50% { transform: scaleX(-1); }
+        }
+
+        .info-row .label {
+            font-weight: 700;
+            color: #6B4C6E;
+            min-width: 90px;
+        }
+
+        /* Stars */
+        .stars {
+            display: inline-flex;
+            gap: 2px;
+        }
+
+        .stars .star-icon {
+            color: #D4A5C0;
+            transition: transform 0.2s ease;
+        }
+
+        .stars .star-icon.empty {
+            color: #D9D0DE;
+        }
+
+        .info-row:hover .stars .star-icon {
+            animation: starPop 0.3s ease forwards;
+        }
+
+        .info-row:hover .stars .star-icon:nth-child(2) { animation-delay: 0.05s; }
+        .info-row:hover .stars .star-icon:nth-child(3) { animation-delay: 0.10s; }
+        .info-row:hover .stars .star-icon:nth-child(4) { animation-delay: 0.15s; }
+        .info-row:hover .stars .star-icon:nth-child(5) { animation-delay: 0.20s; }
+
+        @keyframes starPop {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+
+        /* Price tag */
+        .price-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #E8D5F5, #F5D5E0);
+            border-radius: 30px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #6B4C6E;
+            transition: transform 0.2s ease;
+        }
+
+        .price-tag:hover {
+            transform: scale(1.03);
+        }
+
+        .price-tag .wallet-mini {
+            width: 18px;
+            height: 18px;
+            color: #6B4C6E;
+        }
+
+        /* Divider */
+        .card-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4A5C0, transparent);
+            margin: 14px 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #8B6B8E;
+            font-size: 0.9rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .footer .heart-footer {
+            transition: transform 0.3s ease;
+        }
+
+        .footer:hover .heart-footer {
+            transform: scale(1.3);
+        }
+
+        .footer .heart-footer .heart {
+            transform-origin: 50% 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .footer:hover .heart-footer .heart {
+            transform: scale(1.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header .subtitle {
+                font-size: 1rem;
+            }
+
+            .hotel-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .card-body {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>A Nossa Escapadinha Perfeita</h1>
+        <p class="subtitle">Porque cada momento contigo merece um lugar especial</p>
+        <div class="header-icon">
+            <!-- SparklesIcon -->
+            <svg class="sparkle-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4A5C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z"/>
+            </svg>
+            <!-- HeartIcon -->
+            <svg class="heart-icon" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D4A5C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path class="heart" d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"/>
+            </svg>
+            <!-- SparklesIcon -->
+            <svg class="sparkle-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4A5C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z"/>
+            </svg>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="hotel-grid">
+
+            <!-- Hotel 1 -->
+            <article class="hotel-card">
+                <div class="hotel-image-placeholder img-gradient-1">
+                    <!-- HotelIcon from itshover-vue -->
+                    <svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path class="building" d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16" style="transition: transform 0.4s ease;"/>
+                        <path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/>
+                        <path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/>
+                    </svg>
+                </div>
+                <!-- Para usar imagem real, substitui a div acima por:
+                <img src="imagem-hotel.jpg" alt="Nome do Hotel" class="hotel-image"> -->
+                <div class="card-body">
+                    <h2 class="hotel-name">
+                        <a href="https://exemplo.com/hotel-rosa" target="_blank" rel="noopener">Hotel Villa Rosa</a>
+                    </h2>
+                    <div class="card-divider"></div>
+                    <div class="info-row">
+                        <!-- GlobeIcon -->
+                        <svg class="icon-svg icon-globe" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <g class="globe-group" style="transform-origin: center;">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0 -20"/>
+                                <path d="M2 12h20"/>
+                            </g>
+                        </svg>
+                        <span class="label">Localiza&ccedil;&atilde;o</span>
+                        <span>Sintra, Portugal</span>
+                    </div>
+                    <div class="info-row">
+                        <!-- Car/Distance icon -->
+                        <svg class="icon-svg icon-car" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/>
+                            <path d="M15 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/>
+                            <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6"/>
+                            <path d="M10 6l-1 5h8"/>
+                        </svg>
+                        <span class="label">Dist&acirc;ncia</span>
+                        <span>35 km</span>
+                    </div>
+                    <div class="info-row">
+                        <!-- CalendarIcon -->
+                        <svg class="icon-svg icon-calendar" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="5" width="16" height="16" rx="2"/>
+                            <line x1="16" y1="3" x2="16" y2="7"/>
+                            <line x1="8" y1="3" x2="8" y2="7"/>
+                            <line x1="4" y1="11" x2="20" y2="11"/>
+                        </svg>
+                        <span class="label">Dispon&iacute;vel</span>
+                        <span>14 - 16 Mar 2026</span>
+                    </div>
+                    <div class="info-row">
+                        <!-- SparklesIcon (rating) -->
+                        <svg class="icon-svg icon-sparkle" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path class="sparkle-main" d="M9 18a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z" style="transform-origin: 9px 12px;"/>
+                            <path class="sparkle-top" d="M16 6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 6px;"/>
+                            <path class="sparkle-bottom" d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 18px;"/>
+                        </svg>
+                        <span class="label">Avalia&ccedil;&atilde;o</span>
+                        <span class="stars">
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </span>
+                    </div>
+                    <div class="price-tag">
+                        <!-- WalletIcon mini -->
+                        <svg class="wallet-mini" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"/>
+                            <path class="flap" d="M20 12v4h-4a2 2 0 0 1 0 -4h4" style="transform-origin: 20px 14px;"/>
+                        </svg>
+                        &euro;120 / noite
+                    </div>
+                </div>
+            </article>
+
+            <!-- Hotel 2 -->
+            <article class="hotel-card">
+                <div class="hotel-image-placeholder img-gradient-2">
+                    <svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path class="building" d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16" style="transition: transform 0.4s ease;"/>
+                        <path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/>
+                        <path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/>
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h2 class="hotel-name">
+                        <a href="https://exemplo.com/hotel-oceano" target="_blank" rel="noopener">Ref&uacute;gio do Oceano</a>
+                    </h2>
+                    <div class="card-divider"></div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-globe" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g class="globe-group" style="transform-origin: center;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0 -20"/><path d="M2 12h20"/></g></svg>
+                        <span class="label">Localiza&ccedil;&atilde;o</span>
+                        <span>Ericeira, Portugal</span>
+                    </div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-car" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M15 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6"/><path d="M10 6l-1 5h8"/></svg>
+                        <span class="label">Dist&acirc;ncia</span>
+                        <span>50 km</span>
+                    </div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-calendar" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="4" y1="11" x2="20" y2="11"/></svg>
+                        <span class="label">Dispon&iacute;vel</span>
+                        <span>21 - 23 Mar 2026</span>
+                    </div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-sparkle" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="sparkle-main" d="M9 18a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z" style="transform-origin: 9px 12px;"/><path class="sparkle-top" d="M16 6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 6px;"/><path class="sparkle-bottom" d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 18px;"/></svg>
+                        <span class="label">Avalia&ccedil;&atilde;o</span>
+                        <span class="stars">
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon empty" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </span>
+                    </div>
+                    <div class="price-tag">
+                        <svg class="wallet-mini" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"/><path class="flap" d="M20 12v4h-4a2 2 0 0 1 0 -4h4" style="transform-origin: 20px 14px;"/></svg>
+                        &euro;95 / noite
+                    </div>
+                </div>
+            </article>
+
+            <!-- Hotel 3 -->
+            <article class="hotel-card">
+                <div class="hotel-image-placeholder img-gradient-3">
+                    <svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path class="building" d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16" style="transition: transform 0.4s ease;"/>
+                        <path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/>
+                        <path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/>
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h2 class="hotel-name">
+                        <a href="https://exemplo.com/hotel-jardim" target="_blank" rel="noopener">Jardim Secreto Boutique</a>
+                    </h2>
+                    <div class="card-divider"></div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-globe" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g class="globe-group" style="transform-origin: center;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0 -20"/><path d="M2 12h20"/></g></svg>
+                        <span class="label">Localiza&ccedil;&atilde;o</span>
+                        <span>&Oacute;bidos, Portugal</span>
+                    </div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-car" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M15 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6"/><path d="M10 6l-1 5h8"/></svg>
+                        <span class="label">Dist&acirc;ncia</span>
+                        <span>85 km</span>
+                    </div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-calendar" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="4" y1="11" x2="20" y2="11"/></svg>
+                        <span class="label">Dispon&iacute;vel</span>
+                        <span>7 - 9 Abr 2026</span>
+                    </div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-sparkle" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="sparkle-main" d="M9 18a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z" style="transform-origin: 9px 12px;"/><path class="sparkle-top" d="M16 6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 6px;"/><path class="sparkle-bottom" d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 18px;"/></svg>
+                        <span class="label">Avalia&ccedil;&atilde;o</span>
+                        <span class="stars">
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </span>
+                    </div>
+                    <div class="price-tag">
+                        <svg class="wallet-mini" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"/><path class="flap" d="M20 12v4h-4a2 2 0 0 1 0 -4h4" style="transform-origin: 20px 14px;"/></svg>
+                        &euro;145 / noite
+                    </div>
+                </div>
+            </article>
+
+            <!-- Hotel 4 -->
+            <article class="hotel-card">
+                <div class="hotel-image-placeholder img-gradient-4">
+                    <svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path class="building" d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16" style="transition: transform 0.4s ease;"/>
+                        <path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/>
+                        <path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/>
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h2 class="hotel-name">
+                        <a href="https://exemplo.com/hotel-colina" target="_blank" rel="noopener">Pousada da Colina</a>
+                    </h2>
+                    <div class="card-divider"></div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-globe" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g class="globe-group" style="transform-origin: center;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0 -20"/><path d="M2 12h20"/></g></svg>
+                        <span class="label">Localiza&ccedil;&atilde;o</span>
+                        <span>Ger&ecirc;s, Portugal</span>
+                    </div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-car" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M15 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6"/><path d="M10 6l-1 5h8"/></svg>
+                        <span class="label">Dist&acirc;ncia</span>
+                        <span>350 km</span>
+                    </div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-calendar" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="4" y1="11" x2="20" y2="11"/></svg>
+                        <span class="label">Dispon&iacute;vel</span>
+                        <span>18 - 20 Abr 2026</span>
+                    </div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-sparkle" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="sparkle-main" d="M9 18a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z" style="transform-origin: 9px 12px;"/><path class="sparkle-top" d="M16 6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 6px;"/><path class="sparkle-bottom" d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 18px;"/></svg>
+                        <span class="label">Avalia&ccedil;&atilde;o</span>
+                        <span class="stars">
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon empty" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon empty" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </span>
+                    </div>
+                    <div class="price-tag">
+                        <svg class="wallet-mini" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"/><path class="flap" d="M20 12v4h-4a2 2 0 0 1 0 -4h4" style="transform-origin: 20px 14px;"/></svg>
+                        &euro;80 / noite
+                    </div>
+                </div>
+            </article>
+
+            <!-- Hotel 5 -->
+            <article class="hotel-card">
+                <div class="hotel-image-placeholder img-gradient-5">
+                    <svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path class="building" d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16" style="transition: transform 0.4s ease;"/>
+                        <path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/>
+                        <path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/>
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h2 class="hotel-name">
+                        <a href="https://exemplo.com/hotel-douro" target="_blank" rel="noopener">Quinta do Douro Encantado</a>
+                    </h2>
+                    <div class="card-divider"></div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-globe" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g class="globe-group" style="transform-origin: center;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0 -20"/><path d="M2 12h20"/></g></svg>
+                        <span class="label">Localiza&ccedil;&atilde;o</span>
+                        <span>Peso da R&eacute;gua, Portugal</span>
+                    </div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-car" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M15 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6"/><path d="M10 6l-1 5h8"/></svg>
+                        <span class="label">Dist&acirc;ncia</span>
+                        <span>370 km</span>
+                    </div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-calendar" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="4" y1="11" x2="20" y2="11"/></svg>
+                        <span class="label">Dispon&iacute;vel</span>
+                        <span>2 - 4 Mai 2026</span>
+                    </div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-sparkle" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="sparkle-main" d="M9 18a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z" style="transform-origin: 9px 12px;"/><path class="sparkle-top" d="M16 6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 6px;"/><path class="sparkle-bottom" d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 18px;"/></svg>
+                        <span class="label">Avalia&ccedil;&atilde;o</span>
+                        <span class="stars">
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon empty" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </span>
+                    </div>
+                    <div class="price-tag">
+                        <svg class="wallet-mini" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"/><path class="flap" d="M20 12v4h-4a2 2 0 0 1 0 -4h4" style="transform-origin: 20px 14px;"/></svg>
+                        &euro;160 / noite
+                    </div>
+                </div>
+            </article>
+
+            <!-- Hotel 6 -->
+            <article class="hotel-card">
+                <div class="hotel-image-placeholder img-gradient-6">
+                    <svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path class="building" d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16" style="transition: transform 0.4s ease;"/>
+                        <path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/>
+                        <path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/>
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h2 class="hotel-name">
+                        <a href="https://exemplo.com/hotel-algarve" target="_blank" rel="noopener">Ninho do Algarve</a>
+                    </h2>
+                    <div class="card-divider"></div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-globe" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g class="globe-group" style="transform-origin: center;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0 -20"/><path d="M2 12h20"/></g></svg>
+                        <span class="label">Localiza&ccedil;&atilde;o</span>
+                        <span>Lagos, Portugal</span>
+                    </div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-car" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M15 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6"/><path d="M10 6l-1 5h8"/></svg>
+                        <span class="label">Dist&acirc;ncia</span>
+                        <span>290 km</span>
+                    </div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-calendar" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="4" y1="11" x2="20" y2="11"/></svg>
+                        <span class="label">Dispon&iacute;vel</span>
+                        <span>16 - 18 Mai 2026</span>
+                    </div>
+                    <div class="info-row">
+                        <svg class="icon-svg icon-sparkle" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="sparkle-main" d="M9 18a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z" style="transform-origin: 9px 12px;"/><path class="sparkle-top" d="M16 6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 6px;"/><path class="sparkle-bottom" d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 18px;"/></svg>
+                        <span class="label">Avalia&ccedil;&atilde;o</span>
+                        <span class="stars">
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </span>
+                    </div>
+                    <div class="price-tag">
+                        <svg class="wallet-mini" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"/><path class="flap" d="M20 12v4h-4a2 2 0 0 1 0 -4h4" style="transform-origin: 20px 14px;"/></svg>
+                        &euro;135 / noite
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span>Feito com</span>
+        <!-- HeartIcon -->
+        <svg class="heart-footer" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#D4A5C0" stroke="#D4A5C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path class="heart" d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"/>
+        </svg>
+        <span>para os nossos momentos especiais</span>
+    </footer>
+
+</body>
+</html>
