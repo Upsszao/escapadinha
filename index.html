@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>22 de maio 2016-2026</title>
+    <title>10º aniversário</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -132,17 +132,11 @@
             justify-content: center;
         }
 
-        /* Para usar imagem real, substitui o conteudo do slide por:
-           <img src="foto.jpg" alt="Descricao" style="width:100%;height:100%;object-fit:cover;"> */
-
-        .carousel-slide .hotel-svg-icon {
-            opacity: 0.5;
-            transition: transform 0.5s ease, opacity 0.3s ease;
-        }
-
-        .hotel-card:hover .carousel-slide .hotel-svg-icon {
-            transform: scale(1.08);
-            opacity: 0.65;
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         /* Botoes prev/next */
@@ -207,45 +201,6 @@
         .carousel-dots .dot:hover {
             background: rgba(255, 255, 255, 0.8);
         }
-
-        /* Imagem real dentro do carousel */
-        .hotel-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Gradientes dos slides */
-        .grad-1a { background: linear-gradient(135deg, #E8B4CB, #D4A5C0, #C99BB8); }
-        .grad-1b { background: linear-gradient(135deg, #D4A5C0, #C99BB8, #E8B4CB); }
-        .grad-1c { background: linear-gradient(45deg, #C99BB8, #E8B4CB, #D4A5C0); }
-        .grad-1d { background: linear-gradient(180deg, #E8B4CB, #C99BB8, #D4A5C0); }
-
-        .grad-2a { background: linear-gradient(135deg, #B8C5E8, #A5B4D4, #99AAC9); }
-        .grad-2b { background: linear-gradient(135deg, #A5B4D4, #99AAC9, #B8C5E8); }
-        .grad-2c { background: linear-gradient(45deg, #99AAC9, #B8C5E8, #A5B4D4); }
-        .grad-2d { background: linear-gradient(180deg, #B8C5E8, #99AAC9, #A5B4D4); }
-
-        .grad-3a { background: linear-gradient(135deg, #C5D4E8, #B4C5D4, #A5B8C9); }
-        .grad-3b { background: linear-gradient(135deg, #B4C5D4, #A5B8C9, #C5D4E8); }
-        .grad-3c { background: linear-gradient(45deg, #A5B8C9, #C5D4E8, #B4C5D4); }
-        .grad-3d { background: linear-gradient(180deg, #C5D4E8, #A5B8C9, #B4C5D4); }
-
-        .grad-4a { background: linear-gradient(135deg, #D4C5E8, #C5B4D8, #B8A5CC); }
-        .grad-4b { background: linear-gradient(135deg, #C5B4D8, #B8A5CC, #D4C5E8); }
-        .grad-4c { background: linear-gradient(45deg, #B8A5CC, #D4C5E8, #C5B4D8); }
-        .grad-4d { background: linear-gradient(180deg, #D4C5E8, #B8A5CC, #C5B4D8); }
-
-        .grad-5a { background: linear-gradient(135deg, #E8D4C5, #D8C5B4, #CCB8A5); }
-        .grad-5b { background: linear-gradient(135deg, #D8C5B4, #CCB8A5, #E8D4C5); }
-        .grad-5c { background: linear-gradient(45deg, #CCB8A5, #E8D4C5, #D8C5B4); }
-        .grad-5d { background: linear-gradient(180deg, #E8D4C5, #CCB8A5, #D8C5B4); }
-
-        .grad-6a { background: linear-gradient(135deg, #C5E8D4, #B4D8C5, #A5CCB8); }
-        .grad-6b { background: linear-gradient(135deg, #B4D8C5, #A5CCB8, #C5E8D4); }
-        .grad-6c { background: linear-gradient(45deg, #A5CCB8, #C5E8D4, #B4D8C5); }
-        .grad-6d { background: linear-gradient(180deg, #C5E8D4, #A5CCB8, #B4D8C5); }
 
         /* Card Body */
         .card-body {
@@ -463,7 +418,7 @@
 <body>
 
     <header class="header">
-        <h1>A Nossa Escapadinha Perfeita</h1>
+        <h1>22 de maio 2016 - 2026</h1>
         <p class="subtitle">Porque cada momento contigo merece um lugar especial</p>
         <div class="header-icon">
             <svg class="sparkle-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4A5C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -481,163 +436,58 @@
     <main class="container">
         <div class="hotel-grid">
 
-            <!-- Hotel 1 -->
+            <!-- Hotel 1: Escapadinha na Eira -->
             <article class="hotel-card">
                 <div class="carousel">
                     <div class="carousel-track">
-                        <div class="carousel-slide grad-1a"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-1b"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-1c"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-1d"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
+                        <div class="carousel-slide"><img src="https://escapadinhanaeira.com/wp-content/uploads/2025/05/alambique-suite-hero.jpeg" alt="Escapadinha na Eira - Suite"></div>
+                        <div class="carousel-slide"><img src="https://escapadinhanaeira.com/wp-content/uploads/2025/05/Copy-of-IMG_0741-scaled-800x800.jpg" alt="Escapadinha na Eira - Exterior"></div>
+                        <div class="carousel-slide"><img src="https://escapadinhanaeira.com/wp-content/uploads/2025/05/Copy-of-IMG_0760-scaled.jpg" alt="Escapadinha na Eira - Espaço"></div>
+                        <div class="carousel-slide"><img src="https://escapadinhanaeira.com/wp-content/uploads/2025/05/Copy-of-IMG_0819-scaled.jpg" alt="Escapadinha na Eira - Ambiente"></div>
                     </div>
                     <button class="carousel-btn carousel-prev" aria-label="Anterior">&#8249;</button>
                     <button class="carousel-btn carousel-next" aria-label="Proximo">&#8250;</button>
                     <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
                 </div>
                 <div class="card-body">
-                    <h2 class="hotel-name"><a href="https://exemplo.com/hotel-rosa" target="_blank" rel="noopener">Hotel Villa Rosa</a></h2>
+                    <h2 class="hotel-name"><a href="https://escapadinhanaeira.com/" target="_blank" rel="noopener">Escapadinha na Eira</a></h2>
                     <div class="card-divider"></div>
                     <div class="info-row">
                         <svg class="icon-svg icon-globe" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g class="globe-group" style="transform-origin: center;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0 -20"/><path d="M2 12h20"/></g></svg>
-                        <span class="label">Localiza&ccedil;&atilde;o</span><span>Sintra, Portugal</span>
+                        <span class="label">Localização</span><span>Lousada, Portugal</span>
                     </div>
                     <div class="info-row">
                         <svg class="icon-svg icon-car" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M15 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6"/><path d="M10 6l-1 5h8"/></svg>
-                        <span class="label">Dist&acirc;ncia</span><span>35 km</span>
+                        <span class="label">Distância</span><span>39 km</span>
                     </div>
                     <div class="info-row">
                         <svg class="icon-svg icon-calendar" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="4" y1="11" x2="20" y2="11"/></svg>
-                        <span class="label">Dispon&iacute;vel</span><span>14 - 16 Mar 2026</span>
+                        <span class="label">Data</span><span>23-24 maio</span>
                     </div>
                     <div class="info-row">
                         <svg class="icon-svg icon-sparkle" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="sparkle-main" d="M9 18a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z" style="transform-origin: 9px 12px;"/><path class="sparkle-top" d="M16 6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 6px;"/><path class="sparkle-bottom" d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 18px;"/></svg>
-                        <span class="label">Avalia&ccedil;&atilde;o</span>
-                        <span class="stars"><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+                        <span class="label">Avaliação</span>
+                        <span class="stars">
+                            <svg class="star-icon full" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="star-icon full" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="star-icon full" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="star-icon full" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="star-icon full" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </span>
                     </div>
-                    <div class="price-tag"><svg class="wallet-mini" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"/><path d="M20 12v4h-4a2 2 0 0 1 0 -4h4"/></svg>&euro;120 / noite</div>
+                    <div class="price-tag"><svg class="wallet-mini" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"/><path d="M20 12v4h-4a2 2 0 0 1 0 -4h4"/></svg>&euro;120€ / noite</div>
                 </div>
             </article>
-
-            <!-- Hotel 2 -->
-            <article class="hotel-card">
-                <div class="carousel">
-                    <div class="carousel-track">
-                        <div class="carousel-slide grad-2a"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-2b"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-2c"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-2d"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                    </div>
-                    <button class="carousel-btn carousel-prev" aria-label="Anterior">&#8249;</button>
-                    <button class="carousel-btn carousel-next" aria-label="Proximo">&#8250;</button>
-                    <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-                </div>
-                <div class="card-body">
-                    <h2 class="hotel-name"><a href="https://exemplo.com/hotel-oceano" target="_blank" rel="noopener">Ref&uacute;gio do Oceano</a></h2>
-                    <div class="card-divider"></div>
-                    <div class="info-row"><svg class="icon-svg icon-globe" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g class="globe-group" style="transform-origin: center;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0 -20"/><path d="M2 12h20"/></g></svg><span class="label">Localiza&ccedil;&atilde;o</span><span>Ericeira, Portugal</span></div>
-                    <div class="info-row"><svg class="icon-svg icon-car" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M15 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6"/><path d="M10 6l-1 5h8"/></svg><span class="label">Dist&acirc;ncia</span><span>50 km</span></div>
-                    <div class="info-row"><svg class="icon-svg icon-calendar" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="4" y1="11" x2="20" y2="11"/></svg><span class="label">Dispon&iacute;vel</span><span>21 - 23 Mar 2026</span></div>
-                    <div class="info-row"><svg class="icon-svg icon-sparkle" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="sparkle-main" d="M9 18a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z" style="transform-origin: 9px 12px;"/><path class="sparkle-top" d="M16 6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 6px;"/><path class="sparkle-bottom" d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 18px;"/></svg><span class="label">Avalia&ccedil;&atilde;o</span><span class="stars"><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon empty" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span></div>
-                    <div class="price-tag"><svg class="wallet-mini" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"/><path d="M20 12v4h-4a2 2 0 0 1 0 -4h4"/></svg>&euro;95 / noite</div>
-                </div>
-            </article>
-
-            <!-- Hotel 3 -->
-            <article class="hotel-card">
-                <div class="carousel">
-                    <div class="carousel-track">
-                        <div class="carousel-slide grad-3a"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-3b"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-3c"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-3d"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                    </div>
-                    <button class="carousel-btn carousel-prev" aria-label="Anterior">&#8249;</button>
-                    <button class="carousel-btn carousel-next" aria-label="Proximo">&#8250;</button>
-                    <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-                </div>
-                <div class="card-body">
-                    <h2 class="hotel-name"><a href="https://exemplo.com/hotel-jardim" target="_blank" rel="noopener">Jardim Secreto Boutique</a></h2>
-                    <div class="card-divider"></div>
-                    <div class="info-row"><svg class="icon-svg icon-globe" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g class="globe-group" style="transform-origin: center;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0 -20"/><path d="M2 12h20"/></g></svg><span class="label">Localiza&ccedil;&atilde;o</span><span>&Oacute;bidos, Portugal</span></div>
-                    <div class="info-row"><svg class="icon-svg icon-car" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M15 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6"/><path d="M10 6l-1 5h8"/></svg><span class="label">Dist&acirc;ncia</span><span>85 km</span></div>
-                    <div class="info-row"><svg class="icon-svg icon-calendar" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="4" y1="11" x2="20" y2="11"/></svg><span class="label">Dispon&iacute;vel</span><span>7 - 9 Abr 2026</span></div>
-                    <div class="info-row"><svg class="icon-svg icon-sparkle" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="sparkle-main" d="M9 18a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z" style="transform-origin: 9px 12px;"/><path class="sparkle-top" d="M16 6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 6px;"/><path class="sparkle-bottom" d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 18px;"/></svg><span class="label">Avalia&ccedil;&atilde;o</span><span class="stars"><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span></div>
-                    <div class="price-tag"><svg class="wallet-mini" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"/><path d="M20 12v4h-4a2 2 0 0 1 0 -4h4"/></svg>&euro;145 / noite</div>
-                </div>
-            </article>
-
-            <!-- Hotel 4 -->
-            <article class="hotel-card">
-                <div class="carousel">
-                    <div class="carousel-track">
-                        <div class="carousel-slide grad-4a"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-4b"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-4c"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-4d"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                    </div>
-                    <button class="carousel-btn carousel-prev" aria-label="Anterior">&#8249;</button>
-                    <button class="carousel-btn carousel-next" aria-label="Proximo">&#8250;</button>
-                    <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-                </div>
-                <div class="card-body">
-                    <h2 class="hotel-name"><a href="https://exemplo.com/hotel-colina" target="_blank" rel="noopener">Pousada da Colina</a></h2>
-                    <div class="card-divider"></div>
-                    <div class="info-row"><svg class="icon-svg icon-globe" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g class="globe-group" style="transform-origin: center;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0 -20"/><path d="M2 12h20"/></g></svg><span class="label">Localiza&ccedil;&atilde;o</span><span>Ger&ecirc;s, Portugal</span></div>
-                    <div class="info-row"><svg class="icon-svg icon-car" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M15 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6"/><path d="M10 6l-1 5h8"/></svg><span class="label">Dist&acirc;ncia</span><span>350 km</span></div>
-                    <div class="info-row"><svg class="icon-svg icon-calendar" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="4" y1="11" x2="20" y2="11"/></svg><span class="label">Dispon&iacute;vel</span><span>18 - 20 Abr 2026</span></div>
-                    <div class="info-row"><svg class="icon-svg icon-sparkle" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="sparkle-main" d="M9 18a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z" style="transform-origin: 9px 12px;"/><path class="sparkle-top" d="M16 6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 6px;"/><path class="sparkle-bottom" d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 18px;"/></svg><span class="label">Avalia&ccedil;&atilde;o</span><span class="stars"><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon empty" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon empty" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span></div>
-                    <div class="price-tag"><svg class="wallet-mini" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"/><path d="M20 12v4h-4a2 2 0 0 1 0 -4h4"/></svg>&euro;80 / noite</div>
-                </div>
-            </article>
-
-            <!-- Hotel 5 -->
-            <article class="hotel-card">
-                <div class="carousel">
-                    <div class="carousel-track">
-                        <div class="carousel-slide grad-5a"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-5b"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-5c"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-5d"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                    </div>
-                    <button class="carousel-btn carousel-prev" aria-label="Anterior">&#8249;</button>
-                    <button class="carousel-btn carousel-next" aria-label="Proximo">&#8250;</button>
-                    <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-                </div>
-                <div class="card-body">
-                    <h2 class="hotel-name"><a href="https://exemplo.com/hotel-douro" target="_blank" rel="noopener">Quinta do Douro Encantado</a></h2>
-                    <div class="card-divider"></div>
-                    <div class="info-row"><svg class="icon-svg icon-globe" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g class="globe-group" style="transform-origin: center;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0 -20"/><path d="M2 12h20"/></g></svg><span class="label">Localiza&ccedil;&atilde;o</span><span>Peso da R&eacute;gua, Portugal</span></div>
-                    <div class="info-row"><svg class="icon-svg icon-car" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M15 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6"/><path d="M10 6l-1 5h8"/></svg><span class="label">Dist&acirc;ncia</span><span>370 km</span></div>
-                    <div class="info-row"><svg class="icon-svg icon-calendar" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="4" y1="11" x2="20" y2="11"/></svg><span class="label">Dispon&iacute;vel</span><span>2 - 4 Mai 2026</span></div>
-                    <div class="info-row"><svg class="icon-svg icon-sparkle" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="sparkle-main" d="M9 18a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z" style="transform-origin: 9px 12px;"/><path class="sparkle-top" d="M16 6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 6px;"/><path class="sparkle-bottom" d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 18px;"/></svg><span class="label">Avalia&ccedil;&atilde;o</span><span class="stars"><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon empty" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span></div>
-                    <div class="price-tag"><svg class="wallet-mini" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"/><path d="M20 12v4h-4a2 2 0 0 1 0 -4h4"/></svg>&euro;160 / noite</div>
-                </div>
-            </article>
-
-            <!-- Hotel 6 -->
-            <article class="hotel-card">
-                <div class="carousel">
-                    <div class="carousel-track">
-                        <div class="carousel-slide grad-6a"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-6b"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-6c"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                        <div class="carousel-slide grad-6d"><svg class="hotel-svg-icon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1.75 3.75v16c0 .943 0 1.414.293 1.707s.764.293 1.707.293h14c.943 0 1.414 0 1.707-.293s.293-.764.293-1.707v-16"/><path d="M4.75 6.75h1m-1 4h1m-1 4h1m10-8h1m-1 4h1m-1 4h1M12.75 20.75v-4a2 2 0 0 0-4 0v4M.75 2.75h6c.64-1.173 2.19-2 4-2s3.36.827 4 2h6"/><path d="M8.75 5.75v2m0 2v-2m0 0h4v-2"/></svg></div>
-                    </div>
-                    <button class="carousel-btn carousel-prev" aria-label="Anterior">&#8249;</button>
-                    <button class="carousel-btn carousel-next" aria-label="Proximo">&#8250;</button>
-                    <div class="carousel-dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-                </div>
-                <div class="card-body">
-                    <h2 class="hotel-name"><a href="https://exemplo.com/hotel-algarve" target="_blank" rel="noopener">Ninho do Algarve</a></h2>
-                    <div class="card-divider"></div>
-                    <div class="info-row"><svg class="icon-svg icon-globe" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g class="globe-group" style="transform-origin: center;"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20a14.5 14.5 0 0 0 0 -20"/><path d="M2 12h20"/></g></svg><span class="label">Localiza&ccedil;&atilde;o</span><span>Lagos, Portugal</span></div>
-                    <div class="info-row"><svg class="icon-svg icon-car" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M15 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"/><path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6"/><path d="M10 6l-1 5h8"/></svg><span class="label">Dist&acirc;ncia</span><span>290 km</span></div>
-                    <div class="info-row"><svg class="icon-svg icon-calendar" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="4" y1="11" x2="20" y2="11"/></svg><span class="label">Dispon&iacute;vel</span><span>16 - 18 Mai 2026</span></div>
-                    <div class="info-row"><svg class="icon-svg icon-sparkle" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path class="sparkle-main" d="M9 18a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z" style="transform-origin: 9px 12px;"/><path class="sparkle-top" d="M16 6a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 6px;"/><path class="sparkle-bottom" d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2z" style="transform-origin: 18px 18px;"/></svg><span class="label">Avalia&ccedil;&atilde;o</span><span class="stars"><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span></div>
-                    <div class="price-tag"><svg class="wallet-mini" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"/><path d="M20 12v4h-4a2 2 0 0 1 0 -4h4"/></svg>&euro;135 / noite</div>
-                </div>
-            </article>
-
         </div>
     </main>
 
